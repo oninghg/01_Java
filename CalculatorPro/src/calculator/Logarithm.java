@@ -1,0 +1,34 @@
+package calculator;
+import java.math.*;
+
+public class Logarithm extends Operations {
+	public Logarithm(int numb1, int numb2) {
+		super(numb1, numb2);
+	}
+	
+	public void calculate() {
+		try {
+		checkNumb1();
+		checkNumb2();
+		double result = Math.log(getNumb1()) / Math.log(getNumb2());
+		}
+		catch(IllegalArgumentException e) {
+			System.out.println(e.getClass().getSimpleName());
+		}
+		catch(Exception e) {
+			System.err.println("Geben Sie eine Zahl ein!" + e.getClass().getSimpleName());
+		}
+	}
+	
+	public void checkNumb1() {
+		if(getNumb1() <= 1) {
+			throw new IllegalArgumentException("Die erste Zahl darf nicht 1 oder negativ sein");
+		}
+	}
+	
+	public void checkNumb2() {
+		if(getNumb2() < 0) {
+			throw new IllegalArgumentException("Die zweite Zahl darf nicht negativ sein");
+		}
+	}
+}
