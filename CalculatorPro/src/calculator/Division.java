@@ -5,10 +5,11 @@ public class Division extends Operations {
 		super(numb1, numb2);
 	}
 	
-	public void calculate() {
+	public double calculate() {
+		double result = 0;
 		try {
 		checkNumb();
-		double result = getNumb1() / getNumb2();
+		result = getNumb1() / getNumb2();
 		}
 		catch(IllegalArgumentException e) {
 			System.err.println(e.getMessage());
@@ -17,6 +18,7 @@ public class Division extends Operations {
 		catch(Exception e) {
 			System.err.println("Geben Sie eine Zahl ein!" + e.getClass().getSimpleName());
 		}
+		return result;
 	}
 	
 	public void checkNumb() {

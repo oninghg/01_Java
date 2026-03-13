@@ -3,15 +3,17 @@ package calculator;
 public class ProductMultiNumb extends Operations {
 	public ProductMultiNumb(double numb1, double numb2) {
 		super(numb1, numb2);
+		double result;
 	}
 	
-	public void calculate() {
+	public double calculate() {
 		try {
 			checkNumb();
 			double result = getNumb1();
 		for(double i = getNumb1(); i <= getNumb2(); i++) {
 			result = result * i;
 		}
+		return result;
 		}
 		catch(IllegalArgumentException e) {
 			System.out.println(e.getClass().getSimpleName());
@@ -19,6 +21,7 @@ public class ProductMultiNumb extends Operations {
 		catch(Exception e) {
 			System.err.println("Geben Sie eine Zahl ein!" + e.getClass().getSimpleName());
 		}
+		return 0;
 	}
 	
 	public void checkNumb() {

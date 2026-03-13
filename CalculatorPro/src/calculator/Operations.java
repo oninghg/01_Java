@@ -9,7 +9,7 @@ public abstract class Operations {
 		this.numb2 = numb2;
 	}
 	
-	public abstract void calculate();
+	public abstract double calculate();
 	
 	public double getNumb1() {
 		return numb1;

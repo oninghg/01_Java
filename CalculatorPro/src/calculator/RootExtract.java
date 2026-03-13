@@ -4,13 +4,13 @@ import java.math.*;
 public class RootExtract extends Operations {
 	public RootExtract(double numb1, double numb2) {
 		super(numb1, numb2);
-	}
+		double result;
 	
-	public void calculate() {
+	public double calculate() {
 		try {
 		checkNull();
 		checkNegativity();
-		double result = Math.pow(getNumb2(), 1/getNumb1());
+		return Math.pow(getNumb2(), 1/getNumb1());
 		}
 		catch(IllegalArgumentException e) {
 			System.out.println(e.getClass().getSimpleName());
@@ -18,6 +18,7 @@ public class RootExtract extends Operations {
 		catch(Exception e) {
 			System.err.println("Geben Sie eine Zahl ein!" + e.getClass().getSimpleName());
 		}
+		return 0;
 	}
 	
 	public void checkNull() {

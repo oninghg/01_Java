@@ -1,14 +1,15 @@
 package calculator;
 
 public class Percent extends Operations{
-	public Percent(int numb1, int numb2) {
+	public Percent(double numb1, double numb2) {
 		super(numb1, numb2);
+		double result;
 	}
 	
-	public void calculate() {
+	public double calculate() {
 		try {
 		checkNegativity();
-		double result = getNumb2() * (getNumb1()/100);
+		return getNumb2() * (getNumb1()/100);
 		}
 		catch(IllegalArgumentException e) {
 			System.out.println(e.getClass().getSimpleName());
@@ -16,6 +17,7 @@ public class Percent extends Operations{
 		catch(Exception e) {
 			System.err.println("Geben Sie eine Zahl ein!" + e.getClass().getSimpleName());
 		}
+		return 0;
 	}
 	
 	public void checkNegativity() {

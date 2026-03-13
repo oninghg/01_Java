@@ -4,12 +4,13 @@ import java.math.*;
 public class SquareRoot extends Operations {
 	public SquareRoot(double numb1, double numb2) {
 		super(numb1, numb2);
+		double result;
 	}
 	
-	public void calculate() {
+	public double calculate() {
 		try {
 		checkInrange();
-		double result = Math.pow(getNumb1(), getNumb2());
+		return Math.pow(getNumb1(), getNumb2());
 		}
 		catch(IllegalArgumentException e) {
 			System.out.println(e.getClass().getSimpleName());
@@ -17,6 +18,7 @@ public class SquareRoot extends Operations {
 		catch(Exception e) {
 			System.err.println("Geben Sie eine Zahl ein!" + e.getClass().getSimpleName());
 		}
+		return 0;
 	}
 	
 	public void checkInrange() {

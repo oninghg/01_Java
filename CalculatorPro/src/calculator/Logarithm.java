@@ -2,15 +2,16 @@ package calculator;
 import java.math.*;
 
 public class Logarithm extends Operations {
-	public Logarithm(int numb1, int numb2) {
+	public Logarithm(double numb1, double numb2) {
 		super(numb1, numb2);
+		double result;
 	}
 	
-	public void calculate() {
+	public double calculate() {
 		try {
 		checkNumb1();
 		checkNumb2();
-		double result = Math.log(getNumb1()) / Math.log(getNumb2());
+		return Math.log(getNumb1()) / Math.log(getNumb2());
 		}
 		catch(IllegalArgumentException e) {
 			System.out.println(e.getClass().getSimpleName());
@@ -18,6 +19,7 @@ public class Logarithm extends Operations {
 		catch(Exception e) {
 			System.err.println("Geben Sie eine Zahl ein!" + e.getClass().getSimpleName());
 		}
+		return 0;
 	}
 	
 	public void checkNumb1() {
