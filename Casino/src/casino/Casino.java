@@ -19,7 +19,7 @@ public class Casino {
 	}
 	
 	public static Player createPlayer(Scanner scan) {			//Methode um Spieler zu erstellen
-		System.out.println("Wie ist Ihr Name: "); 
+		System.out.println("Wie ist denn Ihr Name: "); 
 		String name = scan.nextLine();
 		System.out.println("Mit wie vielen Credits wollen Sie spielen (mind. 30)");
 		int credits = scan.nextInt(); scan.nextLine();
